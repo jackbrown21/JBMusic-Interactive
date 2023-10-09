@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<style>
+body {
+background-color: #4AFF5D;
+font-family: Exo2;
+font-size: 15px;
+}
+
+
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 50px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0px;
+border: 2px solid black;
+padding: 10px;
+height: 250px;
+text-align: center;
+font-size: 20px;
+background: #22F038 ;
+background-image: url("please.jpg");
+color: mintcream;
+
+
+}
+
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+text-align: center;
+padding: 10px;
+background-color: #4989F3;
+}
+
+#bordered-container {
+        margin-top: 40px;
+        background-color:whitesmoke;
+        border: 2px solid  rgb(223, 223, 223); /* Set the border color and thickness */
+        border-radius: 20px; /* Set the border radius for rounded edges */
+        padding: 20px; /* Add some padding inside the container */
+        padding-bottom: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+}
+
+#intro{
+	padding: 30px;
+	text-align: center;
+	font-size: 18px;
+}
+
+
+</style>
+
+
+<html>
+
+
+
+<head>
+<title>Rock'n'Roll Hall of Fame (HOF) Quiz</title>
+
+
+
+</head>
+
+
+
+<body>
+		<div id="main">
+		<div id="header">
+<h1>Rock'n'Roll Hall of Fame Quiz</h1>
+</div>
+<form id="form1">
+
+<div id="intro">
+<p>This quiz is designed for all the Rock'n'Roll Hall of Fame (HOF) enthusiasts. Rock history is a lot of fun to learn and it's important to share the knowledge with others. If you haven't checked out the HOF website, <a href="https://www.rockhall.com" target= "_blank">click here</a> before taking the quiz. "Let's Rock it!" </p>
+</div>
+
+
+<div class = "question-1" id="bordered-container">
+
+	<h2>The first Rock'n'Roll HOF class of 1986 contained a star-studded lineup. Which artist below was not apart of this class?</h2>
+	<label for="var_string"><input type="radio" name="hofclass" value="0" id="var_string" />Robert Johnson</label>
+	<label for="var_join"><input type="radio" name="hofclass" value="0" id="var_join" />Sam Cooke</label>
+	<label for="var_info"><input type="radio" name="hofclass" value="20" id="var_info" />Hank Williams</label>
+	<label for="var_condition"><input type="radio" name="hofclass" value="0" id="var_condition"/>Elvis Presley</label>
+
+</div>
+
+<div class = "question-2" id="bordered-container">
+
+<h2>Bob Marley was inducted into the Rock'n'Roll HOF in 1994. Which of the following artists inducted Marley into the HOF? </h2>
+<label for="sub_string"><input type="radio" name="marley" value="20" id="sub_string"/>Bono</label>
+<label for="sub_join"><input type="radio" name="marley" value="0" id="sub_join"/>Eric Clapton</label>
+<label for="sub_info"><input type="radio" name="marley" value="0" id="sub_info" />Sheryl Crow</label>
+<label for="sub_condition"><input type="radio" name="marley" value="0" id="sub_condition" />Snoop Dogg</label>
+
+</div>
+
+<div class = "question-3" id="bordered-container">
+
+<h2>In 2006, Lars Ulrich and James Hetfield (Metallica) inducted Black Sabbath into the HOF. Metallica would perform which of the following Black Sabbath songs after the induction?</h2>
+<label for="cat_string"><input type="radio" name="sabbath" value="0" id="cat_string" />Fairies Wear Boots</label>
+<label for="cat_join"><input type="radio" name="sabbath" value="20" id="cat_join" />Iron Man/Paranoid</label>
+<label for="cat_info"><input type="radio" name="sabbath" value="0" id="cat_info" />Sweet Leaf</label>
+<label for="cat_condition"><input type="radio" name="sabbath" value="0" id="cat_condition" />Sabbath Bloody Sabbath</label>
+
+</div>
+
+<div class = "question-4" id="bordered-container">
+<h2>Who was one of the first managers to ever be inducted into the Rock'n'Roll HOF? Hint: He was the manager for The Beatles.</h2>
+<label for="if_string"><input type="radio" name="beatles" value="0" id="if_string" />Rick Rubin</label>
+<label for="if_join"><input type="radio" name="beatles" value="0" id="if_join" />Danny Goldberg</label>
+<label for="if_info"><input type="radio" name="beatles" value="0" id="if_info" />Peter Grant</label>
+<label for="if_condition"><input type="radio" name="beatles"  value="20" id="if_condition" />Brian Epstein </label>
+
+</div>
+
+<div class = "question-5" id="bordered-container">
+<h2>The Rock'n'Roll HOF class of 2023 includes artists of 80's pop, outlaw country, and rap. Which band/artist is apart of the 2023 class?</h2>
+<label for="if_string"><input type="radio" name="rage" value="0" id="if_string" />A Tribe Called Quest</label>
+<label for="if_join"><input type="radio" name="rage" value="0" id="if_join" />Waylon Jennings</label>
+<label for="if_info"><input type="radio" name="rage" value="20" id="if_info" />Rage Against the Machine</label>
+<label for="if_condition"><input type="radio" name="rage"  value="0" id="if_condition" />Madonna</label>
+
+</div>
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+
+
+<p>Your grade is: <span id="grade">__</span></p>
+<p id="grade2"></p>
+</div>
+
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+
+	if(document.querySelector('input[name = "hofclass"]:checked') &&  document.querySelector('input[name = "marley"]:checked') && document.querySelector('input[name = "sabbath"]:checked') && document.querySelector('input[name = "beatles"]:checked') &&document.querySelector('input[name = "rage"]:checked')){
+
+       hofclass = parseInt(document.querySelector('input[name = "hofclass"]:checked').value);
+	   marley = parseInt(document.querySelector('input[name = "marley"]:checked').value);
+	   sabbath = parseInt(document.querySelector('input[name = "sabbath"]:checked').value);
+	   beatles = parseInt(document.querySelector('input[name = "beatles"]:checked').value);
+	   rage = parseInt(document.querySelector('input[name = "rage"]:checked').value);
+result = hofclass + marley + sabbath + beatles + rage;
+
+grading = [
+	   {score:0,feedback:"You're really bad at this. Like really bad.", image: "sickening.jpg"},
+	   {score:20,feedback:"One question right is better than none.", image: "practice.jpg"},
+	   {score:40,feedback:"A 40! Best known as two out of five.", image: "progress.jpg"},
+	   {score:60,feedback:"You're getting close. Turn the record and go for it again.", image: "noise.jpg"},
+	   {score:80,feedback:"Now you have caught my attention. Almost perfect.", image: "record.jpg"},
+	   {score:100,feedback:"Rock it! You are the Jukebox hero. ", image: "rocker.jpg"}
+	   ];
+
+for(i=0; i<grading.length; i++) {
+    if(result == grading[i].score) {
+    result2 = grading[i].feedback + "<br /><img src='" + grading[i].image + "' width='300'  />";
+	  }
+	  }
+
+	   
+
+	document.getElementById("grade").innerHTML = result;
+
+	document.getElementById("grade2").innerHTML = result2;
+
+}
+
+else {
+alert("Fill out all questions before submitting.");
+}
+
+return false;
+
+}
+</script>
+
+
+
+</body>
+</html>
